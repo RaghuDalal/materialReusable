@@ -1,34 +1,39 @@
 <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
-    <mat-card class="w-50 customShadow">
-        <div class="row text-center ">
-            <div class="col-12">
-                <p class="display-1">LOGIN</p>
-            </div>
-            <div class="col-12">
-                <mat-form-field appearance="outline">
-                    <mat-label>Email or Username</mat-label>
-                    <input matInput>
-                    <button mat-icon-button matSuffix>
-                        <mat-icon>lock</mat-icon>
-                      </button>
-                    
-                  </mat-form-field>
-            </div>
-
-            <div class="col-12">
-                <mat-form-field appearance="outline">
-                    <mat-label>Password</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'">
-                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                      </button>
-                  </mat-form-field>
-            </div>
-
-            <div class="col-12 mt-3 mb-4">
-                <button mat-raised-button color="primary">Login</button>
-            </div>
+  <mat-card class="w-80 customShadow">
+    <div class="row text-center ">
+      <div class="col-12">
+        <p class="display-1">LOGIN</p>
+      </div>
+      <form [formGroup]="loginForm" autocomplete="off">
+        <div class="col-12">
+          <mat-form-field appearance="outline">
+            <mat-label>Email or Username</mat-label>
+            <input matInput formControlName="email">
+            <button mat-icon-button matSuffix>
+              <mat-icon>lock</mat-icon>
+            </button>
+            <app-control-messages class="customPosition" [control]="formControls['email']"></app-control-messages>
+          </mat-form-field>
         </div>
-    
-</mat-card>
+
+        <div class="col-12 mt-2">
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          <app-control-messages class="customPosition" [control]="formControls['password']"></app-control-messages>
+
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 mt-3 mb-4">
+          <button mat-raised-button color="primary" (click)="login()">Login</button>
+        </div>
+      </form>
+    </div>
+
+  </mat-card>
 </div>
