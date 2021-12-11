@@ -1,0 +1,39 @@
+.companyName{
+    font-size: 120%;
+}
+
+.customShadow{
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  }
+
+
+
+/* .mat-sidenav-container{
+  height: 93vh !important;
+} */
+
+a{
+    font-size: 110%;
+}
+a:hover {
+    color: #673AB7;
+    background-color: white ;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  }
+
+button{
+    font-size: 110%;
+    /* min-width: min-content; */
+}
+
+.example-icon {
+    padding: 0 14px;
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .border{
+      margin-left: 5px;
+  }

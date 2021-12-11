@@ -1,0 +1,12 @@
+.mat-app-background {
+    height: 100%;
+  }
+
+  .fixedFooter {
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+}
